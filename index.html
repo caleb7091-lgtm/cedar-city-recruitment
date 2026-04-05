@@ -560,6 +560,272 @@
       transform: translateY(0);
     }
 
+    /* SUU SECTION */
+    .suu { background: var(--slate-dark); }
+
+    .suu .section-label { color: var(--terra-light); }
+    .suu .section-label::after { background: rgba(255,255,255,0.15); }
+
+    .suu .section-title { color: var(--cream); }
+
+    .suu .section-body { color: rgba(255,255,255,0.55); }
+
+    .suu-programs {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .suu-program {
+      background: var(--slate-dark);
+      padding: 28px 24px;
+      transition: background 0.2s;
+    }
+
+    .suu-program:hover { background: rgba(255,255,255,0.04); }
+
+    .suu-program-icon {
+      font-size: 22px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .suu-program-name {
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--cream);
+      margin-bottom: 6px;
+      letter-spacing: 0.02em;
+    }
+
+    .suu-program-detail {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      line-height: 1.6;
+    }
+
+    .suu-partnership {
+      margin-top: 56px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 24px;
+    }
+
+    .suu-partner-card {
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 32px 28px;
+    }
+
+    .suu-partner-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--terra-light);
+      margin-bottom: 12px;
+    }
+
+    .suu-partner-card-body {
+      font-size: 13px;
+      color: rgba(255,255,255,0.4);
+      line-height: 1.75;
+    }
+
+    .suu-stat-row {
+      margin-top: 48px;
+      display: flex;
+      gap: 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .suu-stat {
+      flex: 1;
+      padding: 32px 24px;
+      border-right: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .suu-stat:last-child { border-right: none; }
+
+    .suu-stat-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 40px;
+      font-weight: 300;
+      color: var(--terra-pale);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .suu-stat-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+    }
+
+    /* TESTIMONIALS */
+    .testimonials { background: var(--cream-dark); }
+
+    .carousel-wrap {
+      position: relative;
+      margin-top: 56px;
+      overflow: hidden;
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .testimonial-slide {
+      min-width: 100%;
+      padding: 0 4px;
+    }
+
+    .testimonial-card {
+      background: var(--white);
+      padding: 52px 56px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .testimonial-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.5;
+      color: var(--slate-dark);
+      margin-bottom: 32px;
+    }
+
+    .testimonial-quote::before {
+      content: '\201C';
+      color: var(--terra-pale);
+      font-size: 80px;
+      line-height: 0;
+      vertical-align: -0.4em;
+      margin-right: 8px;
+      font-style: normal;
+    }
+
+    .testimonial-attribution {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .testimonial-name {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--slate-dark);
+      letter-spacing: 0.04em;
+    }
+
+    .testimonial-role {
+      font-size: 12px;
+      color: var(--terra);
+      letter-spacing: 0.06em;
+      font-weight: 400;
+    }
+
+    .testimonial-context {
+      font-size: 12px;
+      color: var(--slate);
+      opacity: 0.6;
+    }
+
+    .testimonial-aside {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 8px;
+      min-width: 180px;
+    }
+
+    .testimonial-industry {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terra);
+      background: var(--terra-pale);
+      padding: 6px 14px;
+      text-align: center;
+    }
+
+    .testimonial-detail {
+      font-size: 12px;
+      color: var(--slate);
+      opacity: 0.5;
+      text-align: right;
+      line-height: 1.6;
+    }
+
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 24px;
+    }
+
+    .carousel-dots {
+      display: flex;
+      gap: 8px;
+    }
+
+    .carousel-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--rule);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .carousel-dot.active {
+      background: var(--terra);
+      transform: scale(1.4);
+    }
+
+    .carousel-arrows {
+      display: flex;
+      gap: 12px;
+    }
+
+    .carousel-btn {
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--rule);
+      background: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--slate);
+      font-size: 16px;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+
+    .carousel-btn:hover {
+      border-color: var(--terra);
+      color: var(--terra);
+      background: rgba(160, 82, 45, 0.04);
+    }
+
+    .placeholder-notice {
+      margin-top: 20px;
+      font-size: 11px;
+      color: var(--slate);
+      opacity: 0.4;
+      font-style: italic;
+      letter-spacing: 0.04em;
+    }
+
     @media (max-width: 900px) {
       nav { padding: 0 24px; }
       .nav-links { display: none; }
@@ -569,6 +835,12 @@
       .stats-grid { grid-template-columns: 1fr; }
       .qol-grid { grid-template-columns: 1fr; }
       .workforce-metrics { grid-template-columns: 1fr; }
+      .suu-programs { grid-template-columns: 1fr 1fr; }
+      .suu-partnership { grid-template-columns: 1fr; }
+      .suu-stat-row { flex-wrap: wrap; }
+      .suu-stat { min-width: 50%; }
+      .testimonial-card { grid-template-columns: 1fr; }
+      .testimonial-aside { align-items: flex-start; }
     }
   </style>
 </head>
@@ -580,7 +852,9 @@
     <ul class="nav-links">
       <li><a href="#financial">The Financial Case</a></li>
       <li><a href="#workforce">Workforce</a></li>
+      <li><a href="#suu">SUU Partnership</a></li>
       <li><a href="#quality">Quality of Life</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -730,6 +1004,220 @@
     </div>
   </section>
 
+  <!-- SUU PARTNERSHIP -->
+  <section class="suu" id="suu">
+    <div class="section-inner">
+      <div class="fade-in" style="max-width:700px;">
+        <p class="section-label">Southern Utah University</p>
+        <h2 class="section-title">Your most valuable recruiting partner is already here.</h2>
+        <p class="section-body">Southern Utah University isn't just a nearby campus — it's an active, city-aligned institution that produces job-ready graduates across a wide range of disciplines every year. With over 140 undergraduate programs, 19 graduate programs, and nearly 1,900 graduates annually, SUU has built a deliberate pipeline designed to place talent locally. The university and Cedar City work closely together, and that relationship extends to businesses that choose to locate here.</p>
+      </div>
+
+      <div class="suu-stat-row fade-in">
+        <div class="suu-stat">
+          <div class="suu-stat-num">15,000+</div>
+          <div class="suu-stat-label">Enrolled Students</div>
+        </div>
+        <div class="suu-stat">
+          <div class="suu-stat-num">1,877</div>
+          <div class="suu-stat-label">Graduates Per Year</div>
+        </div>
+        <div class="suu-stat">
+          <div class="suu-stat-num">140+</div>
+          <div class="suu-stat-label">Undergraduate Programs</div>
+        </div>
+        <div class="suu-stat">
+          <div class="suu-stat-num">19</div>
+          <div class="suu-stat-label">Graduate Programs</div>
+        </div>
+        <div class="suu-stat">
+          <div class="suu-stat-num">#34</div>
+          <div class="suu-stat-label">Top Public Schools, US News</div>
+        </div>
+      </div>
+
+      <div class="suu-programs fade-in" style="margin-top:56px;">
+        <div class="suu-program">
+          <span class="suu-program-icon">💼</span>
+          <div class="suu-program-name">Business & Management</div>
+          <div class="suu-program-detail">Accounting, finance, marketing, MBA, management — including an online MBA program drawing regional talent.</div>
+        </div>
+        <div class="suu-program">
+          <span class="suu-program-icon">💻</span>
+          <div class="suu-program-name">Computer Science & Technology</div>
+          <div class="suu-program-detail">Software engineering, cybersecurity, information systems, and data science programs feeding the STEM pipeline.</div>
+        </div>
+        <div class="suu-program">
+          <span class="suu-program-icon">⚙️</span>
+          <div class="suu-program-name">Engineering & Applied Science</div>
+          <div class="suu-program-detail">Mechanical, civil, and electrical engineering alongside aviation and aircraft maintenance technology.</div>
+        </div>
+        <div class="suu-program">
+          <span class="suu-program-icon">🏥</span>
+          <div class="suu-program-name">Health Sciences</div>
+          <div class="suu-program-detail">19 distinct health science programs including nursing, athletic training, and pre-professional health tracks.</div>
+        </div>
+        <div class="suu-program">
+          <span class="suu-program-icon">📢</span>
+          <div class="suu-program-name">Communication & Media</div>
+          <div class="suu-program-detail">Digital communication, public relations, journalism, and media studies for businesses needing marketing talent.</div>
+        </div>
+        <div class="suu-program">
+          <span class="suu-program-icon">🌿</span>
+          <div class="suu-program-name">Outdoor & Environmental</div>
+          <div class="suu-program-detail">Parks and recreation, environmental science, and sustainability programs — uniquely positioned given Cedar City's geography.</div>
+        </div>
+        <div class="suu-program">
+          <span class="suu-program-icon">🏛️</span>
+          <div class="suu-program-name">Public Administration</div>
+          <div class="suu-program-detail">Graduate program in public administration, plus social sciences and education for service-sector businesses.</div>
+        </div>
+        <div class="suu-program">
+          <span class="suu-program-icon">🎨</span>
+          <div class="suu-program-name">Visual & Performing Arts</div>
+          <div class="suu-program-detail">Design, fine arts, theatre, and music — including the nationally recognized Utah Shakespeare Festival, which SUU hosts.</div>
+        </div>
+      </div>
+
+      <div class="suu-partnership fade-in">
+        <div class="suu-partner-card">
+          <div class="suu-partner-card-title">A direct hiring pipeline</div>
+          <div class="suu-partner-card-body">SUU's Career Center actively connects students with local employers through job fairs, on-campus recruiting, and a dedicated job bank. Businesses that locate in Cedar City gain direct access to this pipeline — including the ability to post positions, recruit on campus, and build internship programs before students graduate. The city facilitates these introductions as part of the onboarding process.</div>
+        </div>
+        <div class="suu-partner-card">
+          <div class="suu-partner-card-title">Research & faculty access</div>
+          <div class="suu-partner-card-body">Beyond hiring, SUU offers businesses access to applied research partnerships, faculty expertise, and specialized lab resources. Whether you're looking for market research support, technical consulting, or a faculty collaborator on a product challenge, the university's relationship with Cedar City means those conversations are straightforward to initiate. This is an asset most markets this size simply don't have.</div>
+        </div>
+        <div class="suu-partner-card">
+          <div class="suu-partner-card-title">Students who want to stay</div>
+          <div class="suu-partner-card-body">A meaningful portion of SUU graduates are actively looking for reasons to build their careers in Cedar City. Many are from the region, have built lives here, and are not seeking to relocate to a major metro. For a relocating business, this translates to employees with strong local roots, lower turnover risk, and genuine investment in the community they're working in.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials" id="testimonials">
+    <div class="section-inner">
+      <div class="fade-in" style="max-width:600px;">
+        <p class="section-label">From Businesses Like Yours</p>
+        <h2 class="section-title">The decision looks different once you've made it.</h2>
+        <p class="section-body">Business owners across a range of industries have made the move to Cedar City. Here's what the experience looks like from the other side.</p>
+      </div>
+
+      <div class="carousel-wrap fade-in">
+        <div class="carousel-track" id="carouselTrack">
+
+          <!-- Slide 1: Tech / Software -->
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div>
+                <div class="testimonial-quote">We were spending more on office space in Irvine than our entire payroll budget here. Within eighteen months of moving, we'd hired six SUU computer science graduates and cut our overhead by nearly half. I wish we'd done it three years earlier.</div>
+                <div class="testimonial-attribution">
+                  <div class="testimonial-name">Marcus T.</div>
+                  <div class="testimonial-role">Founder & CEO</div>
+                  <div class="testimonial-context">B2B software company, 22 employees — relocated from Irvine, CA</div>
+                </div>
+              </div>
+              <div class="testimonial-aside">
+                <div class="testimonial-industry">Technology</div>
+                <div class="testimonial-detail">22 employees<br/>Relocated 2022<br/>Hired 6 locally</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2: Manufacturing / Light Industrial -->
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div>
+                <div class="testimonial-quote">The incentive package was real money — not small print. Between the Rural Employment Development credits and the Enterprise Zone, we recovered our relocation costs faster than our most optimistic projection. The workforce here shows up, and they stay.</div>
+                <div class="testimonial-attribution">
+                  <div class="testimonial-name">Diane R.</div>
+                  <div class="testimonial-role">COO</div>
+                  <div class="testimonial-context">Precision parts manufacturer, 45 employees — relocated from San Bernardino, CA</div>
+                </div>
+              </div>
+              <div class="testimonial-aside">
+                <div class="testimonial-industry">Manufacturing</div>
+                <div class="testimonial-detail">45 employees<br/>Relocated 2021<br/>Incentives recovered relocation costs</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3: Professional Services / Accounting -->
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div>
+                <div class="testimonial-quote">My clients are mostly remote anyway, so location was always a business decision more than a logistics one. What I didn't expect was how much easier it became to retain staff. My team has bought homes here. Nobody's leaving. That's not something I could say in San Diego.</div>
+                <div class="testimonial-attribution">
+                  <div class="testimonial-name">Kevin L.</div>
+                  <div class="testimonial-role">Managing Partner</div>
+                  <div class="testimonial-context">CPA firm, 11 employees — relocated from San Diego, CA</div>
+                </div>
+              </div>
+              <div class="testimonial-aside">
+                <div class="testimonial-industry">Professional Services</div>
+                <div class="testimonial-detail">11 employees<br/>Relocated 2023<br/>0% staff turnover since move</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4: Healthcare / Wellness -->
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div>
+                <div class="testimonial-quote">Opening a second clinic here was supposed to be a test. It became our best-performing location within the first year. Recruiting was easier than anywhere we've operated — SUU's health sciences graduates are well-trained and they actually want to practice locally. That's rare.</div>
+                <div class="testimonial-attribution">
+                  <div class="testimonial-name">Priya M.</div>
+                  <div class="testimonial-role">Founder</div>
+                  <div class="testimonial-context">Physical therapy group, 18 employees — expanded from Los Angeles, CA</div>
+                </div>
+              </div>
+              <div class="testimonial-aside">
+                <div class="testimonial-industry">Healthcare</div>
+                <div class="testimonial-detail">18 employees<br/>Expanded 2022<br/>Best-performing location</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 5: E-commerce / Logistics -->
+          <div class="testimonial-slide">
+            <div class="testimonial-card">
+              <div>
+                <div class="testimonial-quote">We needed warehouse space and we needed it to be affordable. Cedar City gave us that, plus a location that works surprisingly well for Western US distribution. The city staff were genuinely helpful — they connected us with contractors, walked us through the permitting process, and followed up. It felt like they actually wanted us here.</div>
+                <div class="testimonial-attribution">
+                  <div class="testimonial-name">Jordan H.</div>
+                  <div class="testimonial-role">Director of Operations</div>
+                  <div class="testimonial-context">E-commerce fulfillment company, 31 employees — relocated from Riverside, CA</div>
+                </div>
+              </div>
+              <div class="testimonial-aside">
+                <div class="testimonial-industry">E-Commerce & Logistics</div>
+                <div class="testimonial-detail">31 employees<br/>Relocated 2023<br/>Western US distribution hub</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="carousel-controls">
+          <div class="carousel-dots" id="carouselDots">
+            <div class="carousel-dot active" onclick="goToSlide(0)"></div>
+            <div class="carousel-dot" onclick="goToSlide(1)"></div>
+            <div class="carousel-dot" onclick="goToSlide(2)"></div>
+            <div class="carousel-dot" onclick="goToSlide(3)"></div>
+            <div class="carousel-dot" onclick="goToSlide(4)"></div>
+          </div>
+          <div class="carousel-arrows">
+            <button class="carousel-btn" onclick="prevSlide()">&#8592;</button>
+            <button class="carousel-btn" onclick="nextSlide()">&#8594;</button>
+          </div>
+        </div>
+      </div>
+      <div class="placeholder-notice">* Testimonials are illustrative placeholders — to be replaced with verified accounts from Cedar City businesses.</div>
+    </div>
+  </section>
+
   <!-- QUALITY OF LIFE -->
   <section class="qol" id="quality">
     <div class="section-inner">
@@ -795,6 +1283,8 @@
           <a href="mailto:jdavid@cedarcityut.gov">jdavid@cedarcityut.gov</a>
         </div>
         <div class="contact-detail">
+          <div class="contact-icon">🌐</div>
+          <a href="#">[WEBSITE PLACEHOLDER]</a>
         </div>
       </div>
     </div>
@@ -817,6 +1307,23 @@
     }, { threshold: 0.12 });
 
     document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+    // Carousel
+    let currentSlide = 0;
+    const totalSlides = 5;
+    const track = document.getElementById('carouselTrack');
+    const dots = document.querySelectorAll('.carousel-dot');
+
+    function goToSlide(n) {
+      currentSlide = (n + totalSlides) % totalSlides;
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+      dots.forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+    }
+
+    function nextSlide() { goToSlide(currentSlide + 1); }
+    function prevSlide() { goToSlide(currentSlide - 1); }
+
+    setInterval(nextSlide, 7000);
   </script>
 </body>
 </html>
