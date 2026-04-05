@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cedar City, Utah — A Smarter Location for Your Business</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --terra: #A0522D;
+      --terra-light: #C17A4A;
+      --terra-pale: #E8D5C0;
+      --slate: #4A5568;
+      --slate-dark: #2D3748;
+      --cream: #F7F3EE;
+      --cream-dark: #EDE7DC;
+      --white: #FDFAF7;
+      --rule: #C9B89A;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--cream);
+      color: var(--slate-dark);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(247, 243, 238, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--rule);
+      padding: 0 48px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--terra);
+      letter-spacing: 0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--slate);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--terra); }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0 72px 96px;
+      position: relative;
+      overflow: hidden;
+      background: var(--cream-dark);
+    }
+
+    .hero-mountain {
+      position: absolute;
+      inset: 0;
+      background:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 900'%3E%3Cdefs%3E%3ClinearGradient id='sky' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%23D6C9B5' stop-opacity='0.6'/%3E%3Cstop offset='100%25' stop-color='%23EDE7DC' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpolygon points='0,600 120,350 240,500 360,280 480,420 600,200 720,360 840,180 960,320 1080,150 1200,290 1320,200 1440,340 1440,900 0,900' fill='%23BFA98A' opacity='0.18'/%3E%3Cpolygon points='0,700 180,480 300,580 420,400 540,520 660,340 780,460 900,300 1020,440 1140,320 1260,430 1380,360 1440,440 1440,900 0,900' fill='%23A08060' opacity='0.14'/%3E%3Cpolygon points='0,800 200,620 320,700 440,580 560,660 680,520 800,620 920,500 1040,600 1160,520 1280,590 1440,540 1440,900 0,900' fill='%23806040' opacity='0.10'/%3E%3Crect width='1440' height='900' fill='url(%23sky)'/%3E%3C/svg%3E") center/cover no-repeat;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(52px, 7vw, 88px);
+      font-weight: 300;
+      line-height: 1.0;
+      color: var(--slate-dark);
+      margin-bottom: 28px;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      color: var(--terra);
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--slate);
+      max-width: 520px;
+      margin-bottom: 48px;
+      line-height: 1.8;
+    }
+
+    .hero-cta {
+      display: inline-block;
+      padding: 14px 36px;
+      background: var(--terra);
+      color: var(--white);
+      text-decoration: none;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: background 0.2s;
+    }
+
+    .hero-cta:hover { background: var(--slate-dark); }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 40px;
+      right: 72px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--slate);
+      opacity: 0.5;
+    }
+
+    .hero-scroll-line {
+      width: 1px;
+      height: 48px;
+      background: var(--slate);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.3; transform: scaleY(1); }
+      50% { opacity: 0.8; transform: scaleY(0.6); }
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 96px 72px;
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--terra);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .section-label::after {
+      content: '';
+      display: block;
+      height: 1px;
+      width: 48px;
+      background: var(--terra-pale);
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--slate-dark);
+      margin-bottom: 24px;
+    }
+
+    .section-body {
+      font-size: 15px;
+      color: var(--slate);
+      max-width: 640px;
+      line-height: 1.85;
+    }
+
+    /* STATS STRIP */
+    .stats-strip {
+      background: var(--slate-dark);
+      padding: 64px 72px;
+    }
+
+    .stats-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .stat-item {
+      background: var(--slate-dark);
+      padding: 48px 40px;
+      border-left: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .stat-item:first-child { border-left: none; }
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px;
+      font-weight: 300;
+      color: var(--terra-pale);
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.45);
+    }
+
+    .stat-note {
+      font-size: 12px;
+      color: rgba(255,255,255,0.25);
+      margin-top: 6px;
+    }
+
+    /* TWO-COL LAYOUT */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    /* FINANCIAL SECTION */
+    .financial { background: var(--white); }
+
+    .tax-compare {
+      margin-top: 40px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .tax-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .tax-state {
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--slate);
+      letter-spacing: 0.04em;
+    }
+
+    .tax-rate {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 400;
+    }
+
+    .tax-rate.highlight { color: var(--terra); }
+    .tax-rate.muted { color: var(--slate); opacity: 0.4; }
+
+    .tax-bar-wrap {
+      width: 120px;
+      height: 4px;
+      background: var(--cream-dark);
+      border-radius: 2px;
+      overflow: hidden;
+      margin-left: 24px;
+    }
+
+    .tax-bar {
+      height: 100%;
+      border-radius: 2px;
+      background: var(--terra);
+    }
+
+    /* INCENTIVES */
+    .incentives-list {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .incentive-item {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--cream-dark);
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 24px;
+    }
+
+    .incentive-name {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--slate-dark);
+      flex: 1;
+    }
+
+    .incentive-value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--terra);
+      white-space: nowrap;
+    }
+
+    /* WORKFORCE */
+    .workforce { background: var(--cream); }
+
+    .workforce-metrics {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .workforce-metric {
+      background: var(--white);
+      padding: 28px 24px;
+      border-left: 3px solid var(--terra-pale);
+    }
+
+    .workforce-metric-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 300;
+      color: var(--slate-dark);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .workforce-metric-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--slate);
+      opacity: 0.7;
+    }
+
+    /* QUALITY OF LIFE */
+    .qol { background: var(--cream-dark); }
+
+    .qol-grid {
+      margin-top: 48px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .qol-card {
+      background: var(--white);
+      padding: 36px 28px;
+    }
+
+    .qol-icon {
+      font-size: 24px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .qol-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 20px;
+      font-weight: 400;
+      color: var(--slate-dark);
+      margin-bottom: 12px;
+    }
+
+    .qol-card-body {
+      font-size: 13px;
+      color: var(--slate);
+      line-height: 1.75;
+    }
+
+    .qol-card-stat {
+      margin-top: 16px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      color: var(--terra);
+    }
+
+    /* CONTACT */
+    .contact {
+      background: var(--slate-dark);
+      padding: 96px 72px;
+    }
+
+    .contact-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .contact-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(36px, 4vw, 52px);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--cream);
+      margin-bottom: 20px;
+    }
+
+    .contact-body {
+      font-size: 14px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.8;
+    }
+
+    .contact-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 48px 40px;
+    }
+
+    .contact-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 28px;
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 4px;
+    }
+
+    .contact-role {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--terra-light);
+      margin-bottom: 36px;
+    }
+
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 14px;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .contact-detail:last-child { border-bottom: none; }
+
+    .contact-detail a {
+      color: rgba(255,255,255,0.5);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-detail a:hover { color: var(--terra-light); }
+
+    .contact-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #1A202C;
+      padding: 32px 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255,255,255,0.04);
+    }
+
+    footer span {
+      font-size: 11px;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 0.06em;
+    }
+
+    /* DIVIDER */
+    .ornament {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin: 48px 0;
+    }
+
+    .ornament-line {
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+      opacity: 0.4;
+    }
+
+    .ornament-diamond {
+      width: 6px;
+      height: 6px;
+      background: var(--terra-pale);
+      transform: rotate(45deg);
+    }
+
+    /* FADE IN */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 900px) {
+      nav { padding: 0 24px; }
+      .nav-links { display: none; }
+      section, .stats-strip, .contact, footer { padding-left: 24px; padding-right: 24px; }
+      .hero { padding: 0 24px 72px; }
+      .two-col, .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+      .stats-grid { grid-template-columns: 1fr; }
+      .qol-grid { grid-template-columns: 1fr; }
+      .workforce-metrics { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo">Cedar City, Utah</div>
+    <ul class="nav-links">
+      <li><a href="#financial">The Financial Case</a></li>
+      <li><a href="#workforce">Workforce</a></li>
+      <li><a href="#quality">Quality of Life</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-mountain"></div>
+    <div class="hero-content fade-in visible">
+      <p class="hero-eyebrow">Cedar City, Utah — Economic Development</p>
+      <h1 class="hero-title">A smarter<br/>location for<br/><em>your business.</em></h1>
+      <p class="hero-sub">Southern California's cost structure is a known challenge. Cedar City offers a compelling alternative — backed by real numbers, meaningful incentives, and a growing community worth investing in.</p>
+      <a href="#financial" class="hero-cta">See the Numbers</a>
+    </div>
+    <div class="hero-scroll">
+      <div class="hero-scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <div class="stats-strip">
+    <div class="stats-grid">
+      <div class="stat-item fade-in">
+        <div class="stat-number">4.45%</div>
+        <div class="stat-label">Flat Corporate Tax Rate</div>
+        <div class="stat-note">vs. 8.84% in California</div>
+      </div>
+      <div class="stat-item fade-in">
+        <div class="stat-number">12.5 min</div>
+        <div class="stat-label">Average Commute</div>
+        <div class="stat-note">Cedar City residents</div>
+      </div>
+      <div class="stat-item fade-in">
+        <div class="stat-number">3.4%</div>
+        <div class="stat-label">Annual Population Growth</div>
+        <div class="stat-note">A growing market and talent pool</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FINANCIAL -->
+  <section class="financial" id="financial">
+    <div class="section-inner">
+      <div class="two-col">
+        <div class="fade-in">
+          <p class="section-label">The Financial Case</p>
+          <h2 class="section-title">The tax differential is real — and it compounds.</h2>
+          <p class="section-body">Utah's state corporate income tax is a flat 4.45% — among the most competitive rates in the western United States, and significantly below California's 8.84%. There is no franchise tax, and the minimum corporate obligation is $100. For most businesses, the difference represents material savings from year one.</p>
+
+          <div class="tax-compare">
+            <div class="tax-row">
+              <span class="tax-state">Utah</span>
+              <div style="display:flex;align-items:center;gap:16px;">
+                <div class="tax-bar-wrap"><div class="tax-bar" style="width:50%;"></div></div>
+                <span class="tax-rate highlight">4.45%</span>
+              </div>
+            </div>
+            <div class="tax-row">
+              <span class="tax-state">California</span>
+              <div style="display:flex;align-items:center;gap:16px;">
+                <div class="tax-bar-wrap"><div class="tax-bar" style="width:100%;background:#C9B89A;"></div></div>
+                <span class="tax-rate muted">8.84%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="fade-in">
+          <p class="section-label">Available Incentives</p>
+          <h2 class="section-title">Incentives that stack into real value.</h2>
+          <p class="section-body">For a business relocating and hiring locally, available state and county incentives can represent six figures in real, bankable value. Eligibility varies — contact us to understand what applies to your situation.</p>
+
+          <div class="incentives-list">
+            <div class="incentive-item">
+              <span class="incentive-name">Rural Employment Development Incentive</span>
+              <span class="incentive-value">$4,000–$6,000 / job</span>
+            </div>
+            <div class="incentive-item">
+              <span class="incentive-name">Enterprise Zone Tax Credit</span>
+              <span class="incentive-value">$750 / job</span>
+            </div>
+            <div class="incentive-item">
+              <span class="incentive-name">Rural Economic Development TIF</span>
+              <span class="incentive-value">30–50%</span>
+            </div>
+            <div class="incentive-item">
+              <span class="incentive-name">Infrastructure Tax Credit</span>
+              <span class="incentive-value">Up to 50%</span>
+            </div>
+            <div class="incentive-item">
+              <span class="incentive-name">Iron County Small Business Grant</span>
+              <span class="incentive-value">Up to $30,000</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKFORCE -->
+  <section class="workforce" id="workforce">
+    <div class="section-inner">
+      <div class="two-col">
+        <div class="fade-in">
+          <p class="section-label">Workforce & Talent</p>
+          <h2 class="section-title">A pipeline, not a promise.</h2>
+          <p class="section-body">Southern Utah University graduates nearly 1,900 students annually — more than 1,000 in STEM fields and 300 in business. Cedar City's labor force is active and growing, with a participation rate of 65% and unemployment at 3.4%. For businesses that have struggled to recruit and retain employees in Southern California's saturated market, this represents a genuinely different situation.</p>
+
+          <div class="ornament">
+            <div class="ornament-line"></div>
+            <div class="ornament-diamond"></div>
+            <div class="ornament-line"></div>
+          </div>
+
+          <p class="section-body">The population is growing at 3.4% annually — which means the talent pool, the consumer base, and the community are all expanding together.</p>
+        </div>
+
+        <div class="fade-in">
+          <div class="workforce-metrics">
+            <div class="workforce-metric">
+              <div class="workforce-metric-num">1,877</div>
+              <div class="workforce-metric-label">University Graduates / Year</div>
+            </div>
+            <div class="workforce-metric">
+              <div class="workforce-metric-num">1,075</div>
+              <div class="workforce-metric-label">STEM Graduates / Year</div>
+            </div>
+            <div class="workforce-metric">
+              <div class="workforce-metric-num">3.4%</div>
+              <div class="workforce-metric-label">Unemployment Rate</div>
+            </div>
+            <div class="workforce-metric">
+              <div class="workforce-metric-num">29,412</div>
+              <div class="workforce-metric-label">Local Labor Force</div>
+            </div>
+            <div class="workforce-metric">
+              <div class="workforce-metric-num">65%</div>
+              <div class="workforce-metric-label">Labor Force Participation</div>
+            </div>
+            <div class="workforce-metric">
+              <div class="workforce-metric-num">3.4%</div>
+              <div class="workforce-metric-label">Annual Population Growth</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUALITY OF LIFE -->
+  <section class="qol" id="quality">
+    <div class="section-inner">
+      <div class="fade-in" style="max-width:640px;">
+        <p class="section-label">Quality of Life</p>
+        <h2 class="section-title">Your employees will notice the difference.</h2>
+        <p class="section-body">The case for Cedar City isn't just financial. It's the difference between employees who are stretched thin and employees who are settled, present, and staying. That difference shows up in your business.</p>
+      </div>
+
+      <div class="qol-grid" style="margin-top:48px;">
+        <div class="qol-card fade-in">
+          <span class="qol-icon">🏠</span>
+          <h3 class="qol-card-title">Housing & Cost of Living</h3>
+          <p class="qol-card-body">Cedar City's overall cost of living index sits at 96–101 (US = 100). Utilities run below the national average. For employees priced out of Southern California, this is a meaningful change.</p>
+          <div class="qol-card-stat">$342,900 median home</div>
+        </div>
+        <div class="qol-card fade-in">
+          <span class="qol-icon">🕐</span>
+          <h3 class="qol-card-title">Commute & Daily Life</h3>
+          <p class="qol-card-body">The average commute in Cedar City is 12.5 minutes. For employees accustomed to 45–90 minutes each way in Southern California traffic, this is not a small thing.</p>
+          <div class="qol-card-stat">12.5 min average commute</div>
+        </div>
+        <div class="qol-card fade-in">
+          <span class="qol-icon">⛰️</span>
+          <h3 class="qol-card-title">Outdoor Recreation</h3>
+          <p class="qol-card-body">Cedar Breaks National Monument, Kolob Canyons, Brian Head Resort, and Kanarra Falls are all nearby. World-class outdoor access tends to factor into employee quality-of-life conversations.</p>
+        </div>
+        <div class="qol-card fade-in">
+          <span class="qol-icon">🏥</span>
+          <h3 class="qol-card-title">Healthcare & Infrastructure</h3>
+          <p class="qol-card-body">Intermountain Cedar City Hospital serves the region. Cedar City Regional Airport provides regional air access. CATS provides local transit service.</p>
+        </div>
+        <div class="qol-card fade-in">
+          <span class="qol-icon">🎓</span>
+          <h3 class="qol-card-title">Education</h3>
+          <p class="qol-card-body">Southern Utah University anchors the community with 15,000+ enrolled students. K–12 schools average a 5.7/10 rating, in line with the Utah state average.</p>
+        </div>
+        <div class="qol-card fade-in">
+          <span class="qol-icon">🔒</span>
+          <h3 class="qol-card-title">Safety</h3>
+          <p class="qol-card-body">Burglary rates sit below the national average. Motor vehicle theft has declined 53% since 2020. Cedar City is a community people feel settled in.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <div class="contact" id="contact">
+    <div class="contact-inner">
+      <div class="fade-in">
+        <h2 class="contact-title">Let's have a straightforward conversation.</h2>
+        <p class="contact-body">We work directly with business owners who are considering Cedar City. There is no pressure and no obligation — just an honest look at whether the numbers make sense for your situation. Most conversations start with a 20-minute call.</p>
+      </div>
+      <div class="contact-card fade-in">
+        <div class="contact-name">David Johnson</div>
+        <div class="contact-role">Economic Development Director — Cedar City, Utah</div>
+        <div class="contact-detail">
+          <div class="contact-icon">📞</div>
+          <a href="tel:+18016968335">+1 (801) 696-8335</a>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">✉️</div>
+          <a href="mailto:jdavid@cedarcityut.gov">jdavid@cedarcityut.gov</a>
+        </div>
+        <div class="contact-detail">
+          <div class="contact-icon">🌐</div>
+          <a href="#">[WEBSITE PLACEHOLDER]</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <span>Cedar City Economic Development Office</span>
+    <span>Cedar City, Utah</span>
+  </footer>
+
+  <script>
+    // Fade-in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
